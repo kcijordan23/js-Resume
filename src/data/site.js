@@ -133,7 +133,7 @@ export const projects = {
       tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
       img: "",
       github: "https://github.com/kcijordan23/js-Resume",
-      link: "",
+      link: "https://kcijordan23.github.io/js-Resume/",
     },
   ],
 };

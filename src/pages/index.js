@@ -6,6 +6,7 @@ import profilePic from '../../public/images/profile/christian-home.png';
 import AnimatedText from '@/components/AnimatedText';
 import { LinkArrow } from '@/components/Icon';
 import { site, home } from '@/data/site';
+import withBase from '@/lib/withBase';
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
               <p className='my-4 text-base font-medium'>{home.intro}</p>
               <div className='flex items-center justify-center lg:justify-start self-stretch mt-2 gap-4 flex-wrap'>
                 {site.cvUrl && (
-                  <a href={site.cvUrl} target="_blank" rel="noopener noreferrer" download
+                  <a href={withBase(site.cvUrl)} target="_blank" rel="noopener noreferrer" download
                     className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold border-2 border-solid border-transparent
                       hover:bg-light hover:text-dark hover:border-dark
                       dark:bg-light dark:text-dark dark:hover:bg-dark dark:hover:text-light dark:hover:border-light">

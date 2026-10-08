@@ -4,6 +4,7 @@ import '@/styles/globals.css';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { site } from '@/data/site';
+import withBase from '@/lib/withBase';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -16,7 +17,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={site.description} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={withBase("/favicon.ico")} />
       </Head>
       <div className={`${montserrat.variable} font-mont w-full min-h-screen flex flex-col`}>
         <NavBar />

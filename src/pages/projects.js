@@ -6,6 +6,7 @@ import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import { GithubIcon } from '@/components/Icon'
 import { site, projects } from '@/data/site'
+import withBase from '@/lib/withBase'
 
 const Tags = ({ tags = [] }) => (
     <ul className='flex flex-wrap gap-2 mt-3'>
@@ -60,7 +61,7 @@ const FeaturedProject = ({ project }) => (
             className='w-full lg:w-1/2 cursor-pointer overflow-hidden rounded-lg bg-white'>
             {project.img
                 ? <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }}>
-                    <Image src={project.img} alt={project.title} width={1600} height={549}
+                    <Image src={withBase(project.img)} alt={project.title} width={1600} height={549}
                         className='w-full h-auto' sizes="(max-width: 1024px) 100vw, 50vw" />
                   </motion.div>
                 : <TagPanel type={project.type} />}
@@ -80,7 +81,7 @@ const Project = ({ project }) => (
         <a href={project.link || project.github} target="_blank" rel="noopener noreferrer"
             className='w-full cursor-pointer overflow-hidden rounded-lg bg-white'>
             {project.img
-                ? <Image src={project.img} alt={project.title} width={1600} height={900} className='w-full h-auto'
+                ? <Image src={withBase(project.img)} alt={project.title} width={1600} height={900} className='w-full h-auto'
                     sizes="(max-width: 768px) 100vw, 50vw" />
                 : <TagPanel type={project.type} />}
         </a>
